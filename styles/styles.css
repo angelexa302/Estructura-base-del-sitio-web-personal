@@ -45,7 +45,7 @@ body {
 .titulo-principal {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 2.6rem;
+    font-size: 2rem;
     line-height: 1.2;
     color: var(--color-texto);
     margin-bottom: 1rem;
@@ -54,7 +54,7 @@ body {
 .titulo-seccion {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--color-acento);
     margin: 1.5rem 0 1rem;
 }
@@ -90,14 +90,42 @@ body {
 }
 
 /* =========================================================
+   GRID MAESTRO - Portada (index.html)
+   Mobile: 1 columna apilada | Desktop (1024px+): 2 columnas
+   ========================================================= */
+.grid-inicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "hero"
+        "intro"
+        "showcase";
+    gap: 2rem;
+}
+
+.grid-inicio > .seccion-hero {
+    grid-area: hero;
+}
+
+.grid-inicio > .bloque-texto {
+    grid-area: intro;
+}
+
+.grid-inicio > .tarjeta {
+    grid-area: showcase;
+}
+
+/* =========================================================
    HEADER Y NAVEGACIÓN
    ========================================================= */
 .encabezado {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    text-align: center;
     background-color: var(--color-primario);
     padding: 1rem 5%;
     border-bottom: 3px solid var(--color-acento);
@@ -167,7 +195,7 @@ body {
 /* =========================================================
    TARJETAS (figuras, proyectos, habilidades)
    ========================================================= */
-.contenedor > section,
+.contenedor > section:not(.proyectos-grid),
 .contenedor > article {
     display: flex;
     flex-direction: column;
@@ -179,6 +207,37 @@ body {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
+   GRID DE PROYECTOS (proyectos.html)
+   Mobile: 1 columna apilada | Desktop (1024px+): 3 columnas
+   ========================================================= */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "titulo"
+        "proyecto1"
+        "proyecto2"
+        "proyecto3";
+    gap: 1.5rem;
+}
+
+.proyectos-grid > .titulo-principal {
+    grid-area: titulo;
+}
+
+.proyectos-grid > article:nth-of-type(1) {
+    grid-area: proyecto1;
+}
+
+.proyectos-grid > article:nth-of-type(2) {
+    grid-area: proyecto2;
+}
+
+.proyectos-grid > article:nth-of-type(3) {
+    grid-area: proyecto3;
 }
 
 .imagen-tarjeta {
@@ -288,19 +347,35 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE - Enfoque Mobile-First
+   Todo lo anterior es la base para mobile (1 columna, apilado).
+   A partir de acá SOLO se agregan reglas para pantallas grandes.
    ========================================================= */
-@media (max-width: 700px) {
+@media (min-width: 1024px) {
     .encabezado {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
     }
 
     .titulo-principal {
-        font-size: 2rem;
+        font-size: 2.6rem;
     }
 
     .titulo-seccion {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .grid-inicio {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "hero hero"
+            "intro showcase";
+    }
+
+    .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "titulo titulo titulo"
+            "proyecto1 proyecto2 proyecto3";
     }
 }
