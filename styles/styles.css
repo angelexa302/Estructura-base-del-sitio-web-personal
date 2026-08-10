@@ -251,6 +251,27 @@ body {
     margin-bottom: 0.8rem;
 }
 
+/* =========================================================
+   GRID DE HABILIDADES (habilidades.html)
+   Mobile: 1 columna apilada | Desktop (1024px+): 2 columnas
+   ========================================================= */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "foto"
+        "info";
+    gap: 1.5rem;
+}
+
+.habilidades-grid > .tarjeta {
+    grid-area: foto;
+}
+
+.habilidades-grid > .habilidades-info {
+    grid-area: info;
+}
+
 .lista-habilidades {
     list-style: disc;
     padding-left: 1.4rem;
@@ -439,5 +460,11 @@ body {
         grid-template-areas:
             "titulo titulo titulo"
             "proyecto1 proyecto2 proyecto3";
+    }
+
+    .habilidades-grid {
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-areas: "foto info";
+        align-items: start;
     }
 }
