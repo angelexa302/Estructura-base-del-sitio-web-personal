@@ -1,0 +1,25 @@
+// =========================================================
+// VARIABLES SCSS
+// Valores reutilizados en toda la hoja de estilos.
+// =========================================================
+
+// --- Paleta de colores ---
+$color-primario: #1B263B;
+$color-secundario: #415A77;
+$color-acento: #E0A458;
+$color-texto: #E0E1DD;
+$color-texto-oscuro: #0D1B2A;
+$color-fondo: #0D1B2A;
+$color-fondo-claro: #F5F5F5;
+
+// --- Tipografía (Google Fonts, con fallback genérico) ---
+$fuente-titulos: 'Poppins', sans-serif;
+$fuente-texto: 'Roboto', sans-serif;
+
+// --- Bordes y sombras ---
+$radio-borde: 10px;
+$radio-borde-chico: 6px;
+$sombra-tarjeta: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+// --- Breakpoint responsive (mobile-first) ---
+$breakpoint-desktop: 1024px;

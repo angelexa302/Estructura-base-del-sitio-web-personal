@@ -1,470 +1,372 @@
-/* =========================================================
-   IMPORTACIÓN DE FUENTES (Google Fonts)
-   Poppins -> títulos | Roboto -> cuerpo de texto
-   ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500&display=swap');
-
-/* =========================================================
-   VARIABLES GLOBALES - Paleta de colores
-   ========================================================= */
-:root {
-    --color-primario: #1B263B;
-    --color-secundario: #415A77;
-    --color-acento: #E0A458;
-    --color-texto: #E0E1DD;
-    --color-texto-oscuro: #0D1B2A;
-    --color-fondo: #0D1B2A;
-    --color-fondo-claro: #F5F5F5;
-}
-
-/* =========================================================
-   RESET BÁSICO
-   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-texto);
-    background-color: var(--color-fondo);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #E0E1DD;
+  background-color: #0D1B2A;
 }
 
-/* =========================================================
-   TIPOGRAFÍA - Jerarquía visual
-   ========================================================= */
 .titulo-principal {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 2rem;
-    line-height: 1.2;
-    color: var(--color-texto);
-    margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #E0E1DD;
+  margin-bottom: 1rem;
+}
+@media (min-width: 1024px) {
+  .titulo-principal {
+    font-size: 2.6rem;
+  }
 }
 
 .titulo-seccion {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--color-acento);
-    margin: 1.5rem 0 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #E0A458;
+  margin: 1.5rem 0 1rem;
+}
+@media (min-width: 1024px) {
+  .titulo-seccion {
+    font-size: 1.8rem;
+  }
 }
 
 .subtitulo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--color-texto);
-    margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #E0E1DD;
+  margin-bottom: 0.5rem;
 }
 
 .texto-parrafo {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: var(--color-texto);
-    margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #E0E1DD;
+  margin-bottom: 1rem;
 }
 
-/* =========================================================
-   LAYOUT GENERAL
-   ========================================================= */
 .contenedor {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 2rem;
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
 }
 
-/* =========================================================
-   GRID MAESTRO - Portada (index.html)
-   Mobile: 1 columna apilada | Desktop (1024px+): 2 columnas
-   ========================================================= */
 .grid-inicio {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "hero"
-        "intro"
-        "showcase"
-        "galeria";
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "hero" "intro" "showcase" "galeria";
+  gap: 2rem;
 }
-
 .grid-inicio > .seccion-hero {
-    grid-area: hero;
+  grid-area: hero;
 }
-
 .grid-inicio > .bloque-texto {
-    grid-area: intro;
+  grid-area: intro;
 }
-
 .grid-inicio > .tarjeta {
-    grid-area: showcase;
+  grid-area: showcase;
 }
-
 .grid-inicio > .seccion-galeria {
-    grid-area: galeria;
+  grid-area: galeria;
+}
+@media (min-width: 1024px) {
+  .grid-inicio {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "hero hero" "intro showcase" "galeria galeria";
+  }
 }
 
-/* =========================================================
-   HEADER Y NAVEGACIÓN
-   ========================================================= */
 .encabezado {
-    background-color: var(--color-primario);
-    padding: 0.75rem 5%;
-    border-bottom: 3px solid var(--color-acento);
+  background-color: #1B263B;
+  padding: 0.75rem 5%;
+  border-bottom: 3px solid #E0A458;
 }
 
 .navbar-toggler {
-    border-color: var(--color-acento);
+  border-color: #E0A458;
 }
-
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem rgba(224, 164, 88, 0.5);
-}
-
-.logo-img {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(224, 164, 88, 0.5);
 }
 
 .lista-nav {
-    gap: 1.4rem;
+  gap: 1.4rem;
 }
 
 .navbar-nav .enlace-nav {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    color: var(--color-texto);
-    text-decoration: none;
-    padding-bottom: 0.2rem;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #E0E1DD;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
-
 .navbar-nav .enlace-nav:hover {
-    color: var(--color-acento);
-    border-bottom-color: var(--color-acento);
+  color: #E0A458;
+  border-bottom-color: #E0A458;
 }
 
-/* =========================================================
-   SECCIÓN HERO (portada de index.html)
-   ========================================================= */
 .seccion-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.bloque-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contenedor > section:not(.proyectos-grid),
+.contenedor > article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "titulo" "proyecto1" "proyecto2" "proyecto3";
+  gap: 1.5rem;
+}
+.proyectos-grid > .titulo-principal {
+  grid-area: titulo;
+}
+.proyectos-grid > article:nth-of-type(1) {
+  grid-area: proyecto1;
+}
+.proyectos-grid > article:nth-of-type(2) {
+  grid-area: proyecto2;
+}
+.proyectos-grid > article:nth-of-type(3) {
+  grid-area: proyecto3;
+}
+@media (min-width: 1024px) {
+  .proyectos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "titulo titulo titulo" "proyecto1 proyecto2 proyecto3";
+  }
+}
+
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "foto" "info";
+  gap: 1.5rem;
+}
+.habilidades-grid > .tarjeta {
+  grid-area: foto;
+}
+.habilidades-grid > .habilidades-info {
+  grid-area: info;
+}
+@media (min-width: 1024px) {
+  .habilidades-grid {
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-areas: "foto info";
+    align-items: start;
+  }
+}
+
+.pie-pagina {
+  background-color: #1B263B;
+  color: #E0E1DD;
+  text-align: center;
+  padding: 1.5rem 5%;
+  border-top: 3px solid #E0A458;
+}
+
+.lista-redes {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.enlace-red {
+  color: #E0E1DD;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.enlace-red:hover {
+  color: #E0A458;
+}
+
+.logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #E0A458;
 }
 
 .imagen-perfil {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--color-acento);
-    margin-top: 1rem;
-}
-
-/* =========================================================
-   BLOQUES DE TEXTO / ARTÍCULOS
-   ========================================================= */
-.bloque-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-/* =========================================================
-   TARJETAS (figuras, proyectos, habilidades)
-   ========================================================= */
-.contenedor > section:not(.proyectos-grid),
-.contenedor > article {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #E0A458;
+  margin-top: 1rem;
 }
 
 .tarjeta {
-    background-color: var(--color-secundario);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* =========================================================
-   GRID DE PROYECTOS (proyectos.html)
-   Mobile: 1 columna apilada | Desktop (1024px+): 3 columnas
-   ========================================================= */
-.proyectos-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "titulo"
-        "proyecto1"
-        "proyecto2"
-        "proyecto3";
-    gap: 1.5rem;
-}
-
-.proyectos-grid > .titulo-principal {
-    grid-area: titulo;
-}
-
-.proyectos-grid > article:nth-of-type(1) {
-    grid-area: proyecto1;
-}
-
-.proyectos-grid > article:nth-of-type(2) {
-    grid-area: proyecto2;
-}
-
-.proyectos-grid > article:nth-of-type(3) {
-    grid-area: proyecto3;
+  background-color: #415A77;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .imagen-tarjeta {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 0.8rem;
-}
-
-/* =========================================================
-   GRID DE HABILIDADES (habilidades.html)
-   Mobile: 1 columna apilada | Desktop (1024px+): 2 columnas
-   ========================================================= */
-.habilidades-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "foto"
-        "info";
-    gap: 1.5rem;
-}
-
-.habilidades-grid > .tarjeta {
-    grid-area: foto;
-}
-
-.habilidades-grid > .habilidades-info {
-    grid-area: info;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
 }
 
 .lista-habilidades {
-    list-style: disc;
-    padding-left: 1.4rem;
-    margin-top: 1rem;
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-top: 1rem;
 }
-
 .lista-habilidades li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* =========================================================
-   FORMULARIO DE CONTACTO
-   ========================================================= */
 .formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin-top: 1.5rem;
 }
 
 .campo-formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .etiqueta-formulario {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 0.95rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .entrada-formulario,
 .area-texto-formulario {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    padding: 0.7rem;
-    border-radius: 6px;
-    border: 1px solid var(--color-secundario);
-    background-color: var(--color-fondo-claro);
-    color: var(--color-texto-oscuro);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #415A77;
+  background-color: #F5F5F5;
+  color: #0D1B2A;
 }
-
 .entrada-formulario:focus,
 .area-texto-formulario:focus {
-    outline: 2px solid var(--color-acento);
+  outline: 2px solid #E0A458;
 }
 
 .boton {
-    align-self: flex-start;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--color-texto-oscuro);
-    background-color: var(--color-acento);
-    padding: 0.8rem 1.8rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0D1B2A;
+  background-color: #E0A458;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .boton:hover {
-    background-color: #c98d3d;
-    transform: translateY(-2px);
+  background-color: rgb(84.7118241236%, 55.1218062983%, 17.6411170529%);
+  transform: translateY(-2px);
+}
+.boton {
+  align-self: flex-start;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-.pie-pagina {
-    background-color: var(--color-primario);
-    color: var(--color-texto);
-    text-align: center;
-    padding: 1.5rem 5%;
-    border-top: 3px solid var(--color-acento);
-}
-
-.lista-redes {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.8rem;
-}
-
-.enlace-red {
-    color: var(--color-texto);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.enlace-red:hover {
-    color: var(--color-acento);
-}
-
-/* =========================================================
-   COMPONENTES DE BOOTSTRAP - Carousel (galería)
-   ========================================================= */
 .seccion-galeria {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .carousel-galeria {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
 .carousel-galeria .carousel-item img {
-    height: 320px;
-    object-fit: cover;
+  height: 320px;
+  object-fit: cover;
 }
-
 .carousel-galeria .carousel-caption {
-    background-color: rgba(13, 27, 42, 0.6);
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
+  background-color: rgba(13, 27, 42, 0.6);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
 }
-
 .carousel-galeria .carousel-indicators button {
-    background-color: var(--color-acento);
+  background-color: #E0A458;
 }
-
 .carousel-galeria .carousel-control-prev-icon,
 .carousel-galeria .carousel-control-next-icon {
-    background-color: var(--color-acento);
-    border-radius: 50%;
-    padding: 1.2rem;
+  background-color: #E0A458;
+  border-radius: 50%;
+  padding: 1.2rem;
 }
 
-/* =========================================================
-   COMPONENTES DE BOOTSTRAP - Modal (detalle de proyectos)
-   ========================================================= */
 .modal-content {
-    background-color: var(--color-secundario);
-    color: var(--color-texto);
-    border: 2px solid var(--color-acento);
-    border-radius: 10px;
+  background-color: #415A77;
+  color: #E0E1DD;
+  border: 2px solid #E0A458;
+  border-radius: 10px;
 }
 
 .modal-header {
-    border-bottom-color: var(--color-acento);
+  border-bottom-color: #E0A458;
 }
 
 .modal-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    color: var(--color-acento);
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #E0A458;
 }
 
 .modal-body {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn-close {
-    filter: invert(1);
-}
-
-/* =========================================================
-   RESPONSIVE - Enfoque Mobile-First
-   Todo lo anterior es la base para mobile (1 columna, apilado).
-   A partir de acá SOLO se agregan reglas para pantallas grandes.
-   ========================================================= */
-@media (min-width: 1024px) {
-    .titulo-principal {
-        font-size: 2.6rem;
-    }
-
-    .titulo-seccion {
-        font-size: 1.8rem;
-    }
-
-    .grid-inicio {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "hero hero"
-            "intro showcase"
-            "galeria galeria";
-    }
-
-    .proyectos-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-            "titulo titulo titulo"
-            "proyecto1 proyecto2 proyecto3";
-    }
-
-    .habilidades-grid {
-        grid-template-columns: 1fr 1.2fr;
-        grid-template-areas: "foto info";
-        align-items: start;
-    }
+  filter: invert(1);
 }

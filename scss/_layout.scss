@@ -1,0 +1,196 @@
+// =========================================================
+// LAYOUT
+// Estructura general del sitio: contenedores, grids, header/nav y footer.
+// =========================================================
+@use "variables" as *;
+@use "mixins" as *;
+
+// --- Contenedor general (main de cada página) ---
+.contenedor {
+    @include flex-columna(2rem);
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+// --- Grid maestro de la portada (index.html) ---
+// Mobile: 1 columna apilada | Desktop: 2 columnas
+.grid-inicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "hero"
+        "intro"
+        "showcase"
+        "galeria";
+    gap: 2rem;
+
+    > .seccion-hero {
+        grid-area: hero;
+    }
+
+    > .bloque-texto {
+        grid-area: intro;
+    }
+
+    > .tarjeta {
+        grid-area: showcase;
+    }
+
+    > .seccion-galeria {
+        grid-area: galeria;
+    }
+
+    @include escritorio {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "hero hero"
+            "intro showcase"
+            "galeria galeria";
+    }
+}
+
+// --- Header y navegación (navbar de Bootstrap estilizada) ---
+.encabezado {
+    background-color: $color-primario;
+    padding: 0.75rem 5%;
+    border-bottom: 3px solid $color-acento;
+}
+
+.navbar-toggler {
+    border-color: $color-acento;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(224, 164, 88, 0.5);
+    }
+}
+
+.lista-nav {
+    gap: 1.4rem;
+}
+
+.navbar-nav .enlace-nav {
+    font-family: $fuente-texto;
+    font-weight: 500;
+    font-size: 1rem;
+    color: $color-texto;
+    text-decoration: none;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        color: $color-acento;
+        border-bottom-color: $color-acento;
+    }
+}
+
+// --- Sección hero (portada de index.html) ---
+.seccion-hero {
+    @include flex-columna(1rem);
+    align-items: center;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+// --- Bloques de texto / artículos ---
+.bloque-texto {
+    @include flex-columna(0.5rem);
+}
+
+// --- Secciones/artículos genéricos hijos directos del contenedor ---
+.contenedor > section:not(.proyectos-grid),
+.contenedor > article {
+    @include flex-columna(1.5rem);
+}
+
+// --- Grid de proyectos (proyectos.html) ---
+// Mobile: 1 columna apilada | Desktop: 3 columnas
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "titulo"
+        "proyecto1"
+        "proyecto2"
+        "proyecto3";
+    gap: 1.5rem;
+
+    > .titulo-principal {
+        grid-area: titulo;
+    }
+
+    > article:nth-of-type(1) {
+        grid-area: proyecto1;
+    }
+
+    > article:nth-of-type(2) {
+        grid-area: proyecto2;
+    }
+
+    > article:nth-of-type(3) {
+        grid-area: proyecto3;
+    }
+
+    @include escritorio {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "titulo titulo titulo"
+            "proyecto1 proyecto2 proyecto3";
+    }
+}
+
+// --- Grid de habilidades (habilidades.html) ---
+// Mobile: 1 columna apilada | Desktop: 2 columnas
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "foto"
+        "info";
+    gap: 1.5rem;
+
+    > .tarjeta {
+        grid-area: foto;
+    }
+
+    > .habilidades-info {
+        grid-area: info;
+    }
+
+    @include escritorio {
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-areas: "foto info";
+        align-items: start;
+    }
+}
+
+// --- Footer ---
+.pie-pagina {
+    background-color: $color-primario;
+    color: $color-texto;
+    text-align: center;
+    padding: 1.5rem 5%;
+    border-top: 3px solid $color-acento;
+}
+
+.lista-redes {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+
+.enlace-red {
+    color: $color-texto;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-acento;
+    }
+}

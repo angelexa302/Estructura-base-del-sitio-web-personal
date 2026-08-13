@@ -1,0 +1,47 @@
+// =========================================================
+// MIXINS
+// Bloques de código reutilizables y parametrizables.
+// =========================================================
+@use "sass:color";
+@use "variables" as *;
+
+// Contenedor flex en columna con espaciado configurable
+@mixin flex-columna($gap: 1rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+// Estilo base de tarjeta (figuras, proyectos, habilidades)
+@mixin tarjeta {
+    background-color: $color-secundario;
+    border-radius: $radio-borde;
+    padding: 1.5rem;
+    box-shadow: $sombra-tarjeta;
+}
+
+// Botón con color configurable; el hover se oscurece automáticamente
+@mixin boton($color-fondo: $color-acento, $color-frente: $color-texto-oscuro) {
+    font-family: $fuente-titulos;
+    font-weight: 600;
+    font-size: 1rem;
+    color: $color-frente;
+    background-color: $color-fondo;
+    padding: 0.8rem 1.8rem;
+    border-radius: $radio-borde-chico;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: color.adjust($color-fondo, $lightness: -10%);
+        transform: translateY(-2px);
+    }
+}
+
+// Media query mobile-first: agrupa las reglas de escritorio
+@mixin escritorio {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}

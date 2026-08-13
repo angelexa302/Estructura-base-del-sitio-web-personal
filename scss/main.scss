@@ -1,0 +1,10 @@
+// =========================================================
+// MAIN.SCSS
+// Único punto de entrada. No contiene reglas propias:
+// solo importa los partials en orden lógico.
+// =========================================================
+@use "variables";
+@use "mixins";
+@use "base";
+@use "layout";
+@use "components";
